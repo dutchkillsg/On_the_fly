@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactDom from 'react-dom'
-import { Footer, Article, Sectiontwo, Signup, Sectionone, Landingnav, Landingheader } from './components'
+import ReactDom from 'react-dom';
+import { Footer, Article, Sectiontwo, Signup, Sectionone, Landingnav, Landingheader } from './components/lander'
 
 class App extends Component {
   render() {
@@ -13,34 +13,34 @@ class App extends Component {
         <div id="main">
           <section id="one" className = "tiles">
             <Article
-              layout = 'images/pic01.jpg'
-              header = 'Header1'
-              body = 'body text 1'
+              layout = 'images/bar.jpg'
+              header = 'Record Bar Books'
+              body = 'in realtime'
               />
             <Article
-              layout = 'images/pic02.jpg'
-              header = 'Header2'
-              body = 'body text 2'
+              layout = 'images/oldfashioned.jpg'
+              header = 'Down To'
+              body = 'The Last Drip'
               />
             <Article
-              layout = 'images/pic03.jpg'
-              header = 'Header3'
-              body = 'body text 3'
+              layout = 'images/hostess.jpg'
+              header = 'The Host Stand'
+              body = 'Take Reservations'
               />
             <Article
-              layout = 'images/pic04.jpg'
-              header = 'Header4'
-              body = 'body text 4'
+              layout = 'images/table.jpg'
+              header = 'Build Your FloorPlan'
+              body = 'And Seat Your Tables'
               />
             <Article
-              layout = 'images/pic05.jpg'
-              header = 'Header5'
-              body = 'body text 5'
+              layout = 'images/cooking.jpg'
+              header = 'Never 86 An Item'
+              body = 'For any Dish'
               />
             <Article
-              layout = 'images/pic06.jpg'
-              header = 'Header6'
-              body = 'body text 6'
+              layout = 'images/kitchen.jpg'
+              header = 'Keep Track Of All Your Ingredients '
+              body = 'A Happy Kitchen Is a Full Kitchen'
               />
           </section>
 
