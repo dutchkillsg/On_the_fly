@@ -11,7 +11,7 @@
 		100% { top: 0; opacity: 1; }
 	}
 
-	#header {
+	header {
 		@include vendor('display', 'flex');
 		background-color: _palette(bg-alt);
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
