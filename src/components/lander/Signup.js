@@ -1,26 +1,50 @@
 import React, { Component } from 'react'
+import {withRouter} from "react-router-dom";
+import firebase from 'firebase';
+import { auth } from '../../helpers/auth';
 
 
-export default (props) => {
+function setErrorMsg(error) {
+  return {
+    registerError: error.message
+  }
+}
+
+class Signup extends Component {
+  state = { registerError: null }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    auth(this.email.value, this.pw.value)
+    .catch(e => this.setState(setErrorMsg(e),))
+    this.props.history.push('/Onthefly/Profile');
+  }
+
+  render() {
   return (
-      <div className="inner">
+      <div id="signup" className="inner">
 
         <section>
           <h2>Sign Up</h2>
-          <form method="post" action="#">
-            <div className="field half first">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div className="field half">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" />
+          <form onSubmit={this.handleSubmit}>
+            <div className="field first">
+              <label htmlfor="email">Email</label>
+              <input type="text" name="email" id="email" ref={(email) => this.email = email} />
             </div>
             <div className="field">
-              <label for="email">password</label>
-              <input type="text" name="password" id="email" />
+              <label htmlfor="email">password</label>
+              <input type="password" name="password" id="password" ref={(pw) => this.pw = pw} />
             </div>
+
             <ul className="actions">
+              {
+                this.state.registerError &&
+                <div className="alert alert-danger" role="alert">
+                  <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                  <span className="sr-only">Error:</span>
+                  &nbsp;{this.state.registerError}
+                </div>
+              }
               <li><input type="submit" value="Submit" className="special" /></li>
               <li><input type="reset" value="Clear" /></li>
             </ul>
@@ -54,3 +78,5 @@ export default (props) => {
       </div>
   )
 }
+}
+export default withRouter(Signup)

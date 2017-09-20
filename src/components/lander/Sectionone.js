@@ -13,7 +13,7 @@ export default (props) => {
           Simple
           </p>
           <ul className="actions">
-            <li><a href="#one" className="button next scrolly">Get Started</a></li>
+            <li><a href="#signup" className="button next scrolly">Get Started</a></li>
           </ul>
         </div>
       </div>
