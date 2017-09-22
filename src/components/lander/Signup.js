@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {withRouter} from "react-router-dom";
 import firebase from 'firebase';
 import { auth } from '../../helpers/auth';
+import { CreateProfile } from '../../routes/CreateProfile'
 
 
 function setErrorMsg(error) {
@@ -16,8 +17,9 @@ class Signup extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     auth(this.email.value, this.pw.value)
-    .catch(e => this.setState(setErrorMsg(e),))
-    this.props.history.push('/Onthefly/Profile');
+    // .catch(e => this.setState(setErrorMsg(e),))
+    this.props.history.push('/Onthefly/CreateProfile');
+
   }
 
   render() {

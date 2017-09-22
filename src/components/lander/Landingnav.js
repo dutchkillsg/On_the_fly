@@ -15,18 +15,20 @@ function setErrorMsg(error) {
 class Login extends Component {
   state = { loginMessage: null }
   handleSubmit = (e) => {
-    e.preventDefault()
+   e.preventDefault()
     login(this.email.value, this.pw.value)
-      .catch((error) => {
-          this.setState(setErrorMsg('Invalid username/password.'))
-        })
+      // .catch((error) => {
+      //     this.setState(setErrorMsg('Invalid username/password.'))
+      //   })
       this.props.history.push('/Onthefly/Profile');
-      
+
+
+
   }
   resetPassword = () => {
     resetPassword(this.email.value)
       .then(() => this.setState(setErrorMsg(`Password reset email sent to ${this.email.value}.`)))
-      .catch((error) => this.setState(setErrorMsg(`Email address not found.`)))
+      // .catch((error) => this.setState(setErrorMsg(`Email address not found.`)))
   }
 
   render(){

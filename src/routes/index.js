@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Onthefly from './onthefly';
-import Profile from './Profile'
+import Profile from './Profile';
+import CreateProfile from './CreateProfile'
 import { firebaseAuth } from '../helpers/fire'
 
 
@@ -13,7 +14,7 @@ function PrivateRoute ({component: Component, authed, ...rest}) {
       {...rest}
       render={(props) => authed === true
         ? <Component {...props} />
-      : <Redirect to={{pathname: '/Onthefly/Profile', state: {from: props.location}}} />}
+      : <Redirect to={{pathname: '/Onthefly/CreateProfile', state: {from: props.location}}} />}
     />
   )
 }
@@ -59,6 +60,7 @@ export default class Main extends Component {
   <BrowserRouter>
     <Switch>
       <Route path='/Onthefly' exact component={Onthefly} />
+      <PrivateRoute authed={this.state.authed} path="/Onthefly/CreateProfile" exact component={CreateProfile} />
       <PrivateRoute authed={this.state.authed} path="/Onthefly/Profile" exact component={Profile} />
       <PublicRoute authed={this.state.authed} path="/Onthefly" exact component={Onthefly} />
     </Switch>
