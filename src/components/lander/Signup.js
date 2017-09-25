@@ -28,11 +28,11 @@ class Signup extends Component {
           <h2>Sign Up</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="field first">
-              <label htmlfor="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input type="text" name="email" id="email" ref={(email) => this.email = email} />
             </div>
             <div className="field">
-              <label htmlfor="email">password</label>
+              <label htmlFor="email">password</label>
               <input type="password" name="password" id="password" ref={(pw) => this.pw = pw} />
             </div>
 

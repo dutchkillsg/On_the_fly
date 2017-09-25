@@ -6,7 +6,10 @@ class Onthefly extends Component {
   render(){
     return(
   <div id="wrapper">
-    <Landingheader />
+    <Landingheader
+      loginout = "login"
+      menu = '#menu'
+       />
     <Landingnav />
     <Sectionone />
 

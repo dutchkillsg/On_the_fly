@@ -21,7 +21,7 @@ class Login extends Component {
           this.setState(setErrorMsg('Invalid username/password.'))
         })
       this.props.history.push('/Onthefly/Profile');
-      
+
   }
   resetPassword = () => {
     resetPassword(this.email.value)
@@ -35,11 +35,11 @@ class Login extends Component {
         <h2>Log In</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="field first">
-            <label htmlfor="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input type="text" name="email" id="email"  ref={(email) => this.email = email} />
           </div>
           <div className="field ">
-            <label htmlfor="email">password</label>
+            <label htmlFor="email">password</label>
             <input type="password" name="password" id="password" ref={(pw) => this.pw = pw} />
           </div>
 
