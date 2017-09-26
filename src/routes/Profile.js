@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-
+import {withRouter} from "react-router-dom";
+import { logout } from '../helpers/auth';
 class Profile extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    logout()
+    this.props.history.push('/Onthefly');
+  }
+
   render(){
     return(
-      <h1>Hello</h1>
+    <h1>Hello
+      <button className='btn btn-success' onClick={this.handleSubmit}>logout</button>
+    </h1>
     )
   }
 
@@ -11,4 +20,4 @@ class Profile extends Component {
 }
 
 
-export default Profile;
+export default withRouter(Profile);
