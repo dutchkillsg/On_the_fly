@@ -1,5 +1,5 @@
 {
-  "name": "React-bootstrap-template",
+  "name": "On-the-fly",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,7 +7,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "value-equal": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

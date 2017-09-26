@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Footer, Article, Sectiontwo, Signup, Sectionone, Landingnav, Landingheader } from '../components/lander'
+import { Footer, Article, Sectiontwo, Signup, Sectionone, Landingnav, Landingheader } from '../components/lander';
+import { withRouter } from 'react-router-dom';
 
 
 class Onthefly extends Component {
@@ -60,4 +61,4 @@ class Onthefly extends Component {
 }
 }
 
-export default Onthefly;
+export default withRouter(Onthefly);

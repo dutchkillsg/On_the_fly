@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
-import {withRouter} from "react-router-dom";
+import React, { Component } from 'react';
 import firebase from 'firebase';
 import { auth } from '../../helpers/auth';
+import { Redirect } from 'react-router'
+import {withRouter} from "react-router-dom";
+
 
 
 function setErrorMsg(error) {
@@ -17,8 +19,8 @@ class Signup extends Component {
     e.preventDefault()
     auth(this.email.value, this.pw.value)
     .catch(e => this.setState(setErrorMsg(e),))
-    this.props.history.push('/Onthefly/Profile');
   }
+
 
   render() {
   return (

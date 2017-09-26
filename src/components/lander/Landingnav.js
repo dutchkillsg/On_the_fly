@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {withRouter} from "react-router-dom";
+
 import firebase from 'firebase';
 import { login, resetPassword } from '../../helpers/auth';
+import { Redirect } from 'react-router'
+import {withRouter} from "react-router-dom";
 
 function setErrorMsg(error) {
   return {
@@ -20,9 +22,12 @@ class Login extends Component {
       .catch((error) => {
           this.setState(setErrorMsg('Invalid username/password.'))
         })
-      this.props.history.push('/Onthefly/Profile');
+
+
 
   }
+
+
   resetPassword = () => {
     resetPassword(this.email.value)
       .then(() => this.setState(setErrorMsg(`Password reset email sent to ${this.email.value}.`)))
