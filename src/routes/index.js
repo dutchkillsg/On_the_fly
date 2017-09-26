@@ -41,12 +41,10 @@ export default class Main extends Component {
       if (user) {
         this.setState({
           authed: true,
-          loading: false,
         })
       } else {
         this.setState({
           authed: false,
-          loading: false
         })
       }
     })
