@@ -21,3 +21,11 @@ Also calculate cost of goods sold, break-points, and gross profit.
 implement a 'host stand' to set and reserve tables.
 
 add inventory managing for the back of the house.
+
+
+<header id="header" className="alt">
+  <a href="index.html" className="logo"><strong>On</strong> <span>The Fly</span></a>
+
+
+
+</header>
