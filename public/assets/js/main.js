@@ -294,7 +294,7 @@
 				.on('click', function(event) {
 					event.stopPropagation();
 				})
-				.on('click', 'a', function(event) {
+				.on('submit', 'a', function(event) {
 
 					var href = $(this).attr('href');
 
@@ -313,7 +313,7 @@
 
 			$menu
 				.appendTo($body)
-				.on('click', function(event) {
+				.on('submit', function(event) {
 
 					event.stopPropagation();
 					event.preventDefault();

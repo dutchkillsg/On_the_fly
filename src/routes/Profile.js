@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Landingheader } from '../components/lander'
 import { slide as Menu } from 'react-burger-menu'
 import { Redirect } from 'react-router'
 import {withRouter} from "react-router-dom";
@@ -14,15 +15,18 @@ class Profile extends Component {
 
   render(){
     return(
-      <div id="outer-container">
-        <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} >
-          <main id="page-wrap">
-            <a id="home" className="menu-item" href="/">Home</a>
-            <a id="about" className="menu-item" href="/about">About</a>
-            <a id="contact" className="menu-item" href="/contact">Contact</a>
-            <button className='btn btn-success' onClick={this.handleSubmit}>logout</button>
-          </main>
-        </Menu>
+      <div>
+        <Landingheader
+          login = {<a onClick={this.handleSubmit} className="logo">Logout</a>}
+          />
+        <div id="outer-container">
+          <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} >
+            <main id="page-wrap">
+
+
+            </main>
+          </Menu>
+        </div>
       </div>
 
     )
