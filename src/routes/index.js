@@ -3,6 +3,8 @@ import { Redirect } from 'react-router';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Onthefly from './onthefly';
 import Profile from './Profile'
+import Bar from './Bar';
+import Hoststand from './Hoststand'
 import { firebaseAuth } from '../helpers/fire'
 
 
@@ -46,6 +48,10 @@ export default class Main extends Component {
         <Profile/>
       )
         )} />
+      <Route authed={this.state.authed} path='/Profile' conponent={Profile} >
+        <Route authed={this.state.authed} path='/Profile/Hoststand' component={Hoststand} />
+        <Route authed={this.state.authed} path='/Profile/Bar' component={Bar} />
+      </Route>
     </Switch>
   </BrowserRouter>
 )
