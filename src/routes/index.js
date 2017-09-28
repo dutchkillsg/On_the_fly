@@ -48,7 +48,7 @@ export default class Main extends Component {
         <Profile/>
       )
         )} />
-      <Route authed={this.state.authed} path='/Profile' conponent={Profile} >
+      <Route authed={this.state.authed} path='/Profile' component={Profile} >
         <Route authed={this.state.authed} path='/Profile/Hoststand' component={Hoststand} />
         <Route authed={this.state.authed} path='/Profile/Bar' component={Bar} />
       </Route>

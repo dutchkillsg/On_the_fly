@@ -27,7 +27,7 @@
 .bm-menu {
   background: #373a47;
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  font-size:2em;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -38,10 +38,15 @@
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 1em;
+
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.menu-item{
+  border-bottom: none !important;
 }

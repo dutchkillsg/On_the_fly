@@ -3,6 +3,7 @@ import { Landingheader } from '../components/lander';
 import { slide as Menu } from 'react-burger-menu';
 import Hoststand from './Hoststand'
 import  Bar  from './Bar';
+// import { ProductCategoryRow, ProductRow, ProductTable, SearchBar, InventoryList } from '../components/barmanager';
 import { Redirect  } from 'react-router';
 import {withRouter, NavLink} from "react-router-dom";
 import { logout } from '../helpers/auth';
@@ -24,13 +25,13 @@ class Profile extends Component {
 
         <Menu isOpen={ true } noOverlay customCrossIcon={ false }>
 
-              <a href = '' className='menu-item'>Home</a>
-               <NavLink to="/Profile/Hoststand" className="btn btn-primary">Host stand</NavLink>
-               <NavLink to="/Profile/Bar" className="btn btn-primary">Bar</NavLink>
-              <a href = '' className='menu-item'>Kitchen</a>
-          </Menu>
+               <NavLink  to="/Profile" className="menu-item">Home</NavLink>
+               <NavLink to="/Profile/Hoststand" className="menu-item">Host</NavLink>
+               <NavLink to="/Profile/Bar" className="menu-item">Bar</NavLink>
 
-              <Bar />
+        </Menu>
+        {this.props.children}
+
       </div>
 
     )

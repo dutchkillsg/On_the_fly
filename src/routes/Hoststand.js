@@ -37,4 +37,4 @@ class Hoststand extends Component {
 }
 
 
-export default withRouter(Hoststand);
+export default (Hoststand);
