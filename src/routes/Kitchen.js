@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { Landingheader } from '../components/lander';
+import React, {Component} from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import { Landingheader } from '../components/lander';
+import { withRouter, NavLink } from "react-router-dom";
 import Hoststand from './Hoststand'
 import  Bar  from './Bar';
-import Kitchen from './Kitchen';
-import { Redirect  } from 'react-router';
-import {withRouter, NavLink} from "react-router-dom";
 import { logout } from '../helpers/auth';
 
 
-class Profile extends Component {
-  handleSubmit = (e) => {
-    e.preventDefault()
-    logout()
-
-  }
-
+class Kitchen extends Component{
   render(){
     return(
       <div>
@@ -32,16 +23,10 @@ class Profile extends Component {
                <NavLink to='/Profile/Kitchen' className="menu-item">Kitchen</NavLink>
 
         </Menu>
-
-        {this.props.children}
-
+      <h1 id="soon">COMING SOON</h1>
       </div>
-
     )
   }
-
-
 }
 
-
-export default withRouter(Profile);
+export default Kitchen;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 var _this = this;
 class ProductRow extends Component{
   constructor(props){
@@ -14,7 +15,7 @@ class ProductRow extends Component{
     render() {
         return (
             <tr>
-                <td>{name}</td>
+                <td>{this.props.name}</td>
                 <td>${this.props.product.price}</td>
             	<td>{this.props.product.category}</td>
                 <td onClick={ this.props.removeItem.bind(null, _this.props.product['.key']) } style={{ color: 'red', marginLeft: '10px', cursor: 'pointer' }}>

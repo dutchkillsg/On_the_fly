@@ -1,40 +1,42 @@
 import React, {Component} from 'react';
-import {withRouter} from "react-router-dom";
+import { slide as Menu } from 'react-burger-menu';
+import { Landingheader } from '../components/lander';
+import BookingPage from '../components/booking/BookingPage'
+import { withRouter, NavLink } from "react-router-dom";
+import { logout } from '../helpers/auth';
+
 
 class Hoststand extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    logout()
+  }
+
   render(){
+
     return(
+
+      <div className='Host'>
+      <Landingheader
+        login = {<a onClick={this.handleSubmit} className="logo">Logout</a>}
+        />
+      <Menu isOpen={ true } noOverlay customCrossIcon={ false }>
+
+             <NavLink to="/Profile" className="menu-item">Home</NavLink>
+             <NavLink to="/Profile/Hoststand" className="menu-item">Host</NavLink>
+             <NavLink to="/Profile/Bar" className="menu-item">Bar</NavLink>
+             <NavLink to='/Profile/Bar' className="menu-item">Kitchen</NavLink>
+
+      </Menu>
       <div className="container profilepadding">
-        <h2 className= 'title'>Host Stand</h2>
-        <form onSubmit=''>
-          <div className="field first">
-            <label >Category</label>
-            <select onChange='' name="category" className="form-control standalone" type="select" label="Select" placeholder="select">
-              <option value="" defaultValue>Select</option>
-              <option value="Sporting Goods">Sporting Goods</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Auto Parts">Auto Parts</option>
-            </select>
-          </div>
-          <label htmlFor="email">Name</label>
-            <input className= 'field' name="name"/>
-          <label htmlFor="email">Price</label>
-              <input className='field' name="price"/>
-          <div className="">
-            <label >In Stock?</label>
-              <select onChange='' name="stocked" className="form-control standalone" type="select" label="Select" placeholder="select">
-                <option value="" defaultValue>Select</option>
-                <option value="True">True</option>
-                <option value="">False</option>
-              </select>
-            </div>
-            <button className="btn-default" ></button>
-          </form>
-        </div>
+        <BookingPage />
+      </div>
+
+      </div>
 
     )
   }
 }
 
 
-export default (Hoststand);
+export default withRouter(Hoststand);

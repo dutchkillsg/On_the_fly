@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import { withRouter } from "react-router-dom";
+import { slide as Menu } from 'react-burger-menu';
+import { Landingheader } from '../components/lander';
+import { withRouter, NavLink } from "react-router-dom";
+import { logout } from '../helpers/auth';
 
 
 class Bar extends Component {
@@ -23,6 +26,10 @@ class Bar extends Component {
 
   }
 
+  logOut = (e) => {
+    e.preventDefault()
+    logout()
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -46,12 +53,24 @@ class Bar extends Component {
 
   render(){
     return(
+      <div>
+      <Landingheader
+        login = {<a onClick={this.logOut} className="logo">Logout</a>}
+        />
+      <Menu isOpen={ true } noOverlay customCrossIcon={ false }>
+
+             <NavLink to="/Profile" className="menu-item">Home</NavLink>
+             <NavLink to="/Profile/Hoststand" className="menu-item">Host</NavLink>
+             <NavLink to="/Profile/Bar" className="menu-item">Bar</NavLink>
+             <NavLink to='/Profile/Kitchen' className="menu-item">Kitchen</NavLink>
+
+      </Menu>
         <div className='profilepadding'>
-        <h2 className= 'title'>Input Products</h2>
-        <form onSubmit={ this.handleSubmit }>
+        <h2 className= 'title bartitle'>Input Products</h2>
+        <form onSubmit={ this.handleSubmit } className="barform">
           <div className="field first">
             <label >Category</label>
-            <select onChange={ this.onChange } name="category" className="form-control standalone" type="select" label="Select" placeholder="select" ref={(category) => this.category = category}>
+            <select onChange={ this.onChange } name="category" className="form-control standalone inputcolor" type="select" label="Select" placeholder="select" ref={(category) => this.category = category}>
               <option value="" defaultValue>Select</option>
               <option value="Liquor">Liquor</option>
               <option value="Beer">Beer</option>
@@ -60,15 +79,15 @@ class Bar extends Component {
           </div>
           <div className='field'>
             <label htmlFor="name">Name</label>
-            <input onChange={ this.onChange } className= 'field' name="name" ref={(name) => this.name = name} />
+            <input onChange={ this.onChange } className= 'field inputcolor' name="name" ref={(name) => this.name = name} />
           </div>
           <div className='field'>
             <label htmlFor="price">Price</label>
-            <input onChange={ this.onChange } className='field' name="price" ref={(price) => this.price = price} />
+            <input onChange={ this.onChange } className='field inputcolor' name="price" ref={(price) => this.price = price} />
           </div>
           <div className='field'>
             <label htmlFor="quantity">Quantity</label>
-            <input onChange={ this.onChange } className='field' name="quantity" ref={(quantity) => this.quantity = quantity} />
+            <input onChange={ this.onChange } className='field inputcolor' name="quantity" ref={(quantity) => this.quantity = quantity} />
           </div>
           <div className="field">
             <label>In Stock?</label>
@@ -82,10 +101,14 @@ class Bar extends Component {
           </form>
           </div>
 
+          </div>
+
+
+
 
     )
   }
 }
 
 
-export default (Bar);
+export default withRouter(Bar);

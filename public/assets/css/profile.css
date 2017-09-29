@@ -5,3 +5,30 @@
 .profilepadding{
   padding-left: 310px;
 }
+
+.barform{
+  padding-left: 300px;
+  padding-right: 500px;
+}
+
+.bartitle{
+  padding-left: 625px;
+}
+
+#soon{
+  padding-left: 800px;
+  padding-top: 400px;
+}
+
+.inputcolor{
+color: black !important;
+}
+
+#inputdatecolor{
+  color: black;
+}
+
+.paddingtop{
+  padding-left: 400px;
+  padding-top: 200px;
+}
